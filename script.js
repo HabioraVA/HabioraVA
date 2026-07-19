@@ -306,46 +306,6 @@ faqItems.forEach(item => {
 
 });
 /*=========================================================
-AUTO TESTIMONIALS
-=========================================================*/
-
-const testimonials=document.querySelectorAll(".testimonial-card");
-
-let currentTestimonial=0;
-
-function rotateTestimonials(){
-
-testimonials.forEach(card=>{
-
-card.style.opacity=".35";
-
-card.style.transform="scale(.95)";
-
-});
-
-testimonials[currentTestimonial].style.opacity="1";
-
-testimonials[currentTestimonial].style.transform="scale(1)";
-
-currentTestimonial++;
-
-if(currentTestimonial>=testimonials.length){
-
-currentTestimonial=0;
-
-}
-
-}
-
-rotateTestimonials();
-
-setInterval(rotateTestimonials,3500);
-
-/*=========================================================
-BOOKING FORM
-=========================================================*/
-
-/*=========================================================
 BOOKING FORM
 =========================================================*/
 
