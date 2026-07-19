@@ -3833,6 +3833,17 @@ border-radius:50px;
 cursor:pointer;
 
 }
+.behind-image img{
+    width:100%;
+    max-width:470px;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:30px;
+    border:8px solid rgba(255,255,255,.15);
+    box-shadow:
+        0 35px 70px rgba(0,0,0,.15),
+        inset 0 0 0 1px rgba(255,255,255,.2);
+}
 /* =========================================
 BUSINESS OBJECTIVES
 ========================================= */
