@@ -363,10 +363,11 @@ if (booking) {
         button.disabled = true;
 
         emailjs.sendForm(
-            "service_5z9w8hq",
-            "template_mbdpfzl",
-            booking
-        )
+    "service_5z9w8hq",
+    "template_mbdpfzl",
+    booking,
+    "xKiJL1A0HbwPAnmY3"
+)
 
         .then(function () {
 
