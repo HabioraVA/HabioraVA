@@ -345,41 +345,53 @@ setInterval(rotateTestimonials,3500);
 BOOKING FORM
 =========================================================*/
 
-const booking=document.getElementById("bookingForm");
+/*=========================================================
+BOOKING FORM
+=========================================================*/
 
-if(booking){
+const booking = document.getElementById("bookingForm");
 
-booking.addEventListener("submit",(e)=>{
+if (booking) {
 
-e.preventDefault();
+    booking.addEventListener("submit", function (e) {
 
-const button=booking.querySelector("button");
+        e.preventDefault();
 
-button.innerHTML="Scheduling...";
+        const button = booking.querySelector("button");
 
-button.disabled=true;
+        button.innerHTML = "Sending...";
+        button.disabled = true;
 
-setTimeout(()=>{
+        emailjs.sendForm(
+            "service_5z9w8hq",
+            "template_mbdpfzl",
+            booking
+        )
 
-button.innerHTML="✓ Request Sent";
+        .then(function () {
 
-button.style.background="#28a745";
+            button.innerHTML = "✓ Redirecting...";
 
-setTimeout(()=>{
+            setTimeout(function () {
 
-button.innerHTML="Schedule My Discovery Call";
+                window.location.href =
+                "https://calendly.com/junela-habiora-va/30min";
 
-button.disabled=false;
+            }, 1000);
 
-button.style.background="";
+        })
 
-booking.reset();
+        .catch(function (error) {
 
-},2500);
+            console.error(error);
 
-},1500);
+            button.innerHTML = "Failed to Send";
 
-});
+            button.disabled = false;
+
+        });
+
+    });
 
 }
 /*=========================================================
