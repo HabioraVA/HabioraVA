@@ -1860,20 +1860,29 @@ BOOK A CALL
             <form id="bookingForm">
 
                 <input
-                    type="text"
-                    placeholder="Full Name"
-                    required>
+    id="fullName"
+    name="full_name"
+    type="text"
+    placeholder="Full Name"
+    required>
 
                 <input
-                    type="email"
-                    placeholder="Email Address"
-                    required>
+    id="email"
+    name="email"
+    type="email"
+    placeholder="Email Address"
+    required>
 
                 <input
-                    type="text"
-                    placeholder="Company Name">
+    id="company"
+    name="company"
+    type="text"
+    placeholder="Company Name">
 
-                <select required>
+                <select
+    id="service"
+    name="service"
+    required>
 
                     <option value="">
                         Select a Service
@@ -1894,8 +1903,10 @@ BOOK A CALL
                 </select>
 
                 <textarea
-                    rows="6"
-                    placeholder="Tell us about your project..."></textarea>
+    id="message"
+    name="message"
+    rows="6"
+    placeholder="Tell us about your project..."></textarea>
 
                 <button
                     type="submit"
@@ -2142,6 +2153,13 @@ FOOTER
 
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init({
+    publicKey: "xKiJL1A0HbwPAnmY3",
+});
+</script>
 <script src="script.js"></script>
 
 </body>
